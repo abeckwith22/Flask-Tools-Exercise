@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Welcome to Home!</h1>
+<ul>
+    {% for survey in surveys %}
+        <form action="/survey/{{survey}}/question/{{q_num}}">
+            <li id="{{surveys[survey].title}}">
+                <h3>{{surveys[survey].title}}</h3>
+                <p>{{surveys[survey].instructions}}</p>
+            </li>
+            <button>Start Survey</button>
+        </form>
+    {% endfor %}
+</ul>
+{% endblock %}
